@@ -1,0 +1,31 @@
+ <div class="d-flex flex-column mt-auto">
+  {% if 'date' in plan %}
+  <div>
+    <div class="d-grid gap-2">
+    <button type="button" class="btn btn-light" style='font-size: 15px; float: center;'>
+      {{plan['date']}}
+    </button>
+    </div>
+  </div>
+  {% endif %}
+  {% if 'yesterday' in plan %}
+  <div style='color:rgb(120,120,120)'>
+    The day before: </div>
+  <div> {{plan['yesterday']}}</div>
+  {% endif %}
+  {% if 'today' in plan %}
+  <div style='color:rgb(120,120,120)'>
+    Today is the day: </div>
+  <div> {{plan['today']}}</div>
+  {% endif %}
+  {% if 'tomorrow' in plan %}
+  <div style='color:rgb(120,120,120)'>
+    What I see tomorrow: </div>
+  <div style='margin-bottom:16px;'> {{plan['tomorrow']}}</div>
+  {% endif %}
+  {% if 'mark' in plan %}
+  <div style='color:rgb(120,120,120)'>
+    Your auto-initials: </div>
+  <div> {{plan['mark']}}</div>
+  {% endif %}
+ </div>
