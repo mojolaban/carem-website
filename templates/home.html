@@ -4,11 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    
     <title>Carpe Diem!</title>
-    
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
-    
+    <link rel="shortcut icon" href="{{ url_for('static',
+      filename='favicon.png') }}">
     <style>
       h1 {
         font-size: 100px; font-family: Roboto; font-weight: bold;
@@ -50,39 +48,32 @@
       }
     </style>
   </head>
-  
   <body>
-    
     {% include 'nav.html' %}
     <div id="container">
-        <img id="banner" title="don`t drink coffee too much" class="d-none d-md-block" src="https://carem-website.mojolaban.repl.co/static/banner-carem2.jpg" height="320">
-        <h1>Carpe diem</h1>
-          <p class="mt-2">
-            Seize the day! Let's get your stuff done. Finish what you started yesteday, get boosted on what you are doing today, jot down your plans tomorrow. Simply write down in a one-line of 160 character the stuff you really want to get done. Start now, stay focused, and see how the magic happens.  
-          </p>
-            <button id="button1" onclick="window.location.href='https://carem-website.mojolaban.repl.co/show'" type="button" title='let`s do something!' class="btn btn-light">
-              What do you want to achieve today?
-            </button>      
-            <button id="button2" onclick="window.location.href='https://carem-website.mojolaban.repl.co/make'" type="button" title='jot down your plans!' class="btn btn-dark">
-              Let's get 'em done!
-            </button>
+      <img id="banner" title="don`t drink coffee too much" class="d-none d-md-block" src="https://carem-website.mojolaban.repl.co/static/banner-carem2.jpg" height="320">
+      <h1>Carpe diem</h1>
+      <p class="mt-2">
+        Seize the day! Let's get your stuff done. Finish what you started yesteday, get boosted on what you are doing today, jot down your plans tomorrow. Simply write down in a one-line of 160 character the stuff you really want to get done. Start now, stay focused, and see how the magic happens.  
+      </p>
+      <button id="button1" onclick="window.location.href='https://carem-website.mojolaban.repl.co/show'" type="button" title='let`s do something!' class="btn btn-light">
+        What do you want to achieve today?
+      </button>      
+      <button id="button2" onclick="window.location.href='https://carem-website.mojolaban.repl.co/make'" type="button" title='jot down your plans!' class="btn btn-dark">
+        Let's get 'em done!
+      </button>
     </div>
-    
     <div>
       <hr size=0.5 style='margin-top:330px'>
       <h4 class="text-center" style='color: rgb(180,180,180); margin-bottom:16px;margin-top:20px;font-family: Roboto'> 
        SAMPLE PROGRESS TRACKING:  
       </h4>
     </div>
-    
     <div id="below-container" title="you can't click, it's just a sample" class="d-flex justify-content-between mt-auto">
       {% for plan in plans %}
         {% include 'sample_item.html' %}
       {% endfor %}
     </div>
-
     {% include 'footer.html' %}
-    
   </body>
-  
 </html>

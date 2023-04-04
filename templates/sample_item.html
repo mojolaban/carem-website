@@ -2,7 +2,10 @@
   {% if 'date' in plan %}
   <div>
     <div class="d-grid gap-2">
-    <button type="button" class="btn btn-light" style='font-size: 15px; float: center;'>
+    <button type="button" 
+      class="btn btn-light" 
+      style='font-size: 15px; 
+      float: center;'>
       {{plan['date']}}
     </button>
     </div>
@@ -10,18 +13,25 @@
   {% endif %}
   {% if 'today' in plan %}
   <div style='color:rgb(120,120,120)'>
-    Today is the day: </div>
-  <div> {{plan['today']}}</div>
+    Today is the day: 
+  </div>
+  <div> 
+    {{plan['today']}}
+  </div>
   {% endif %}
   {% if 'yesterday' in plan %}
   <div style='color:rgb(120,120,120)'>
     The day before: </div>
-  <div> {{plan['yesterday']}}</div>
+  <div> 
+    {{plan['yesterday']}}
+  </div>
   {% endif %}
    {% if 'tomorrow' in plan %}
   <div style='color:rgb(120,120,120)'>
     What I see tomorrow: </div>
-  <div style='margin-bottom:16px;'> {{plan['tomorrow']}}</div>
+  <div style='margin-bottom:16px;'> 
+    {{plan['tomorrow']}}
+  </div>
   {% endif %}
   {% if 'mark' in plan %}
   <div style='color:rgb(120,120,120)'>

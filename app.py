@@ -1,10 +1,6 @@
 from flask import Flask, render_template, jsonify, request, json
 from database import load_plans_from_db, SAMPLE_PLAN, add_plan_to_db
-#from dateutil.parser import parse
-#from dateutil import parser
 from datetime import datetime
-
-#from sqlalchemy import text
 
 app = Flask(__name__) 
 

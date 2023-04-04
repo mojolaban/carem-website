@@ -2,4 +2,4 @@ Flask
 gunicorn 
 sqlalchemy
 pymysql
-python-dateutil
+datetime

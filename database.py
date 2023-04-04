@@ -10,7 +10,6 @@ engine = create_engine(db_connection_string,
                         }
                       })
 
-
 def load_plans_from_db(mark,thedate):
   with engine.connect() as conn:
     result = conn.execute (text("select * from plans where mark= :mark and thedate= :thedate"),{"mark":mark,"thedate":thedate})
@@ -29,30 +28,9 @@ def add_plan_to_db(data):
     "today":data['today'],
     "yesterday":data['yesterday'],
     "tomorrow":data['tomorrow'],
-    "mark":data['mark'],
-    }
+    "mark":data['mark']}
     ]
     )
-
-
-#with engine.connect() as conn:
-#  result = conn.execute(text("select * from plans"))
-
-#result_dicts = []
-#for row in result.all():
-#  result_dicts.append(row._asdict())
-#print(result_dicts)
-
-
-#  print("type(result):",type(result))
-#  result_all=result.all()
-#  print("type(result.all())", type(result_all))
-#  print("result.all():",result_all)
-#  first_result = result_all[0]
-#  print("type(first_result:)",type(first_result))
-#  first_result_dict = result_all[0]._asdict()
-#  print("type(first_result_dict:)",type(first_result_dict))
-#  print(first_result_dict)
 
 SAMPLE_PLAN = [
   {
