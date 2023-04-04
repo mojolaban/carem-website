@@ -8,15 +8,15 @@
     </div>
   </div>
   {% endif %}
-  {% if 'yesterday' in plan %}
-  <div style='color:rgb(120,120,120)'>
-    The day before: </div>
-  <div> {{plan['yesterday']}}</div>
-  {% endif %}
   {% if 'today' in plan %}
   <div style='color:rgb(120,120,120)'>
     Today is the day: </div>
   <div> {{plan['today']}}</div>
+  {% endif %}
+  {% if 'yesterday' in plan %}
+  <div style='color:rgb(120,120,120)'>
+    The day before: </div>
+  <div> {{plan['yesterday']}}</div>
   {% endif %}
   {% if 'tomorrow' in plan %}
   <div style='color:rgb(120,120,120)'>
