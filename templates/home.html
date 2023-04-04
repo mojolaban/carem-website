@@ -55,13 +55,17 @@
     
     {% include 'nav.html' %}
     <div id="container">
-        <img id="banner" class="d-none d-md-block" src="https://carem-website.mojolaban.repl.co/static/banner-carem2.jpg" height="320">
+        <img id="banner" title="don`t drink coffee too much" class="d-none d-md-block" src="https://carem-website.mojolaban.repl.co/static/banner-carem2.jpg" height="320">
         <h1>Carpe diem</h1>
           <p class="mt-2">
             Seize the day! Let's get your stuff done. Finish what you started yesteday, get boosted on what you are doing today, jot down your plans tomorrow. Simply write down in a one-line of 160 character the stuff you really want to get done. Start now, stay focused, and see how the magic happens.  
           </p>
-<button id="button1" type="button" class="btn btn-light">What do you want to achieve today?</button>      
-<button id="button2" type="button" class="btn btn-dark">Let's get 'em done!</button>
+            <button id="button1" onclick="window.location.href:'https://carem-website.mojolaban.repl.co/show'" type="button" title='let`s do something!' class="btn btn-light">
+              What do you want to achieve today?
+            </button>      
+            <button id="button2" type="button" title='jot down your plans!' class="btn btn-dark">
+              Let's get 'em done!
+            </button>
     </div>
     
     <div>
@@ -71,7 +75,7 @@
       </h4>
     </div>
     
-    <div id="below-container" class="d-flex justify-content-between mt-auto">
+    <div id="below-container" title="you can't click, it's just a sample" class="d-flex justify-content-between mt-auto">
       {% for plan in plans %}
         {% include 'planitem.html' %}
       {% endfor %}

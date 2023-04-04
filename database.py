@@ -38,3 +38,30 @@ def load_plans_from_db():
 #  first_result_dict = result_all[0]._asdict()
 #  print("type(first_result_dict:)",type(first_result_dict))
 #  print(first_result_dict)
+
+SAMPLE_PLAN = [
+  {
+    'id' : 1,
+    'date' : '01-04-2023',
+    'yesterday' : 'Started data extraction on 1 article',
+    'today' : 'Research sources of systematic literature review and choose one method',
+    'tomorrow': 'Conduct more (at least 10) article data extractions',
+    'mark' : 'auniquecode'
+  },
+    {
+    'id' : 2,
+    'date' : '02-04-2023',
+    'yesterday' : 'Chose content analysis as the framework for data synthesis',
+    'today' : 'Conduct 10 data extractions on selected articles',
+    'tomorrow': 'Start to remove articles with low quality rigor and unclear findings',
+    'mark' : 'moreuniquecode'
+  },
+    {
+    'id' : 3,
+    'date' : '03-04-2023',
+    'yesterday' : 'Done extracting 17 data extractions',
+    'today' : 'Constructing parameters of quality articles, and selecting articles to be removed',
+    'tomorrow': 'Continue data extractions (minimum 20)',
+    'mark' : 'anotheruniquecode'
+  }
+]

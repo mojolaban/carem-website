@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include 'bootstrap.html' %}
+    <title>Show Your Plan</title>
+  </head>
+  <body>
+    {% include 'nav.html' %}
+   <style>
+      #container {
+        max-width: 70%;
+        margin: 150px auto;
+        justify-content: center;
+        align-items: center;
+      }
+   </style>
+    <div id='container' class="row">
+
+      <div class='col-md-5'>
+        <h1 class='mt-2 mb-4'>
+          Previous plan
+        </h1>      
+        <div title="your initial">
+          <label class="form-label">
+            Your initial
+          </label>
+          <input type="text" class="form-control mb-2"
+          placeholder="Your Initial">
+        </div>
+        <div title="the date of your jotted down plan">
+          <label for="formGroupExampleInput2" class="form-label mb-2">
+            Date
+          </label>
+          <input type="date" class="form-control" 
+            placeholder="Date">
+          <div class="d-grid gap-2" title="show your plan">
+          <button type="button" class="btn btn-primary btn-dark mt-4">
+            Show it to me!
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class='col-md-5'>
+         <img class="d-none d-md-block" src="https://carem-website.mojolaban.repl.co/static/banner-carem.jpg" style='height:320px; border: 10px solid #fff; border-radius: 25px;'>
+        
+      </div>
+
+        
+      </div>
+    
+    {% include 'footer.html' %}
+  </body>
+</html>
