@@ -9,45 +9,107 @@
    <style>
       #container {
         max-width: 70%;
-        margin: 150px auto;
+        margin: 100px auto 20px auto;
+        justify-content: center;
+        align-items: center;
+      }
+     #below_container{
+        max-width: 70%;
+        margin: 15px auto;
         justify-content: center;
         align-items: center;
       }
    </style>
+
     <div id='container' class="row">
 
       <div class='col-md-5'>
         <h1 class='mt-2 mb-4'>
           Previous plan
         </h1>      
-        <div title="your initial">
-          <label class="form-label">
-            Your initial
-          </label>
-          <input type="text" class="form-control mb-2"
-          placeholder="Your Initial">
-        </div>
-        <div title="the date of your jotted down plan">
-          <label for="formGroupExampleInput2" class="form-label mb-2">
-            Date
-          </label>
-          <input type="date" class="form-control" 
-            placeholder="Date">
-          <div class="d-grid gap-2" title="show your plan">
-          <button type="button" class="btn btn-primary btn-dark mt-4">
-            Show it to me!
-          </button>
+        <form action="/show" method="post">
+          <div title="your initial">
+            <label class="form-label">
+              Your initial
+            </label>
+            <input type="text" class="form-control mb-2"
+            placeholder="Your Initial" name="mark" required>
           </div>
+          <div title="your jotted down date">
+            <label class="form-lab el mb-2">
+              Date
+            </label>
+            <input type="date" class="form-control" 
+              placeholder="Date" name="thedate" required>
+            
+            <div class="d-grid gap-2" title="show your jotted-down plan (provide your initial and date)">
+            <button type="submit" class="btn btn-primary btn-dark mt-4">
+              Show it to me!
+            </button>
+            <div class="d-grid gap-2" title="if you haven't made one">
+            <button type="text"  onclick="window.location.href='https://carem-website.mojolaban.repl.co/make'"  class="btn btn-primary btn-light mt-0">
+              Click here to make plan!
+            </button>
+          </form>
+
+          </div>
+            </div>
         </div>
+            
       </div>
       
       <div class='col-md-5'>
-         <img class="d-none d-md-block" src="https://carem-website.mojolaban.repl.co/static/banner-carem.jpg" style='height:320px; border: 10px solid #fff; border-radius: 25px;'>
-        
+         <img class="d-none d-md-block" src="https://carem-website.mojolaban.repl.co/static/banner-carem.jpg" style='height:360px; border: 10px solid #fff; border-radius: 25px;'>
+      </div>
+       
       </div>
 
-        
+
+
+    
+      {% if 'thedate' in data %}
+      <div style="text-align: center;">
+        <button class="btn btn-primary btn-light mt-4" style="width: 57%;height:50px">
+          <div style='font-family:Roboto; font-size=40'>
+            DATE: {{data['thedate']}}
+          </div>
+         </button>
       </div>
+      {% endif %}
+    
+    <div id='below_container' class="row">
+      <div class='col-md-3'>
+        {% if 'today' in data %}
+      <div style='color:rgb(120,120,120)'>
+        TODAY: </div>
+      <div> {{data['today']}}</div>
+      {% endif %}
+      </div>
+      <div class='col-md-3'>
+        {% if 'yesterday' in data %}
+      <div style='color:rgb(120,120,120)'>
+        YESTERDAY: </div>
+      <div> {{data['yesterday']}}</div>
+      {% endif %}
+      </div>
+      <div class='col-md-3'>
+        {% if 'tomorrow' in data %}
+      <div style='color:rgb(120,120,120)'>
+        TOMORROW: </div>
+      <div> {{data['tomorrow']}}</div>
+      {% endif %}
+      </div>
+    </div>
+
+      {% if 'thedate' in data %}
+      <div style="text-align: center;">
+        <button onclick="window.location.href='https://carem-website.mojolaban.repl.co/'" class="btn btn-primary btn-link mt-4" style="width: 57%;height:50px" >
+          <div style='font-family:Roboto; font-size=40'>
+            Back to Main Page
+          </div>
+         </button>
+      </div>
+      {% endif %}
     
     {% include 'footer.html' %}
   </body>

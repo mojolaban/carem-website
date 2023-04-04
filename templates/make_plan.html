@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include 'bootstrap.html' %}
+    <title>Make Your Plan</title>
+  </head>
+  <body>
+    {% include 'nav.html' %}
+   <style>
+      #container {
+        max-width: 70%;
+        margin: 100px auto 20px auto;
+        justify-content: center;
+        align-items: center;
+      }
+   </style>
+
+    <div id='container' class="row">
+
+      <div class='col-md-8'>
+         <img class="d-none d-md-block" src="https://carem-website.mojolaban.repl.co/static/banner-carem3.jpg" style='height:450px; border: 10px solid #fff; border-radius: 25px;'>
+      </div>
+      
+      <div class='col-md-4'>
+        <h1 class='mt-2 mb-4'>
+          Make plan
+        </h1>      
+        <form action="/make/committed" method="post">
+          <div title="write your unique initial (ideally min. 6 characters) - this is important to retrieve your jotted-down plans">
+            <label class="form-label">
+              Your initial
+            </label>
+            <input type="text" class="form-control mb-2"
+            placeholder="Your Initial" name="mark" required>
+          </div>
+          <div title="your jotted down date - this is important to retrieve your jotted-down plans">
+            <label class="form-lab el mb-2">
+              Date
+            </label>
+            <input type="date" class="form-control mb-2" 
+              placeholder="Date" name="thedate" required>
+          <div title="what`s my plan today?">
+            <label class="form-label" mb-2>
+              Today's plan
+            </label>
+            <input type="text" class="form-control mb-2"
+            placeholder="Today's gift" name="today" required>
+          </div>
+          <div title="what did i do yesterday?">
+            <label class="form-label">
+              Yesterday's achievement
+            </label>
+            <input type="text" class="form-control mb-2"
+            placeholder="Yesterday's history" name="yesterday" required>
+          </div>
+          <div title="what`s for tomorrow?">
+            <label class="form-label">
+              Tomorrow's plan
+            </label>
+            <input type="text" class="form-control mb-2"
+            placeholder="Tomorrow's mistery" name="tomorrow" required>
+          </div>
+            
+            <div class="d-grid gap-2" title="jotting down your plan">
+            <button type="submit" class="btn btn-primary btn-dark mt-4">
+              Get committed!
+            </button>
+          </form>
+          </div>
+        </div>
+      </div>
+      
+     
+       
+      </div>
+    
+    {% include 'footer.html' %}
+  </body>
+</html>
