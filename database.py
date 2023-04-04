@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, text
+import os
 
-db_connection_string = "mysql+pymysql://8fwmgk3ybnzhbmfmluoz:pscale_pw_XlDJqpWhk9tQaaIaTHnNwGVlNX3gLVnQRvTWHIMGiYu@aws.connect.psdb.cloud/carem-website?charset=utf8mb4"
+db_connection_string = os.environ['db_connection_string']
 
 engine = create_engine(db_connection_string,
                       connect_args={
@@ -9,13 +10,23 @@ engine = create_engine(db_connection_string,
                         }
                       })
 
-with engine.connect() as conn:
-  result = conn.execute(text("select * from plans"))
 
-result_dicts = []
-for row in result.all():
-  result_dicts.append(row._asdict())
-print(result_dicts)
+def load_plans_from_db():
+  with engine.connect() as conn:
+    result = conn.execute (text("select * from plans"))
+    planslist = []
+    for row in result.all():
+      planslist.append(row._asdict())
+    return planslist
+
+
+#with engine.connect() as conn:
+#  result = conn.execute(text("select * from plans"))
+
+#result_dicts = []
+#for row in result.all():
+#  result_dicts.append(row._asdict())
+#print(result_dicts)
 
 
 #  print("type(result):",type(result))

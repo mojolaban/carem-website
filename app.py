@@ -1,4 +1,6 @@
 from flask import Flask, render_template, jsonify
+from database import load_plans_from_db
+#from sqlalchemy import text
 
 app = Flask(__name__) 
 
@@ -32,6 +34,7 @@ PLANS = [
 
 @app.route("/")
 def hello_carem():
+#  planslist = load_plans_from_db
   return render_template('home.html', plans=PLANS)
 
 @app.route("/do")
