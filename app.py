@@ -20,14 +20,20 @@ def make_plan():
 
 @app.route("/show", methods=['post']) #show plans already jotted down
 def show_made_plan():
-  data = request.form
-  mark = jsonify(data['mark']).get_data(as_text=
-                                        True).strip().strip('"')
-  thedate = datetime.strptime(jsonify(data['thedate']).
-                              get_data(as_text=True).strip().strip('"'), 
-                              '%Y-%m-%d').date()
-  return render_template('show_plan.html',data=
-                         load_plans_from_db(mark,thedate))
+  try:
+    data = request.form
+    mark = jsonify(data['mark']).get_data(as_text=
+                                          True).strip().strip('"')
+    thedate = datetime.strptime(jsonify(data['thedate']).                              get_data(as_text=True).strip().strip('"'), 
+                                '%Y-%m-%d').date()
+    return render_template('show_plan.html',data=
+                           load_plans_from_db(mark,thedate))
+  except Exception as e:
+    error_message = str(e)
+    error_warning = "404"
+    return render_template('show_plan.html', warning=error_warning)
+
+
 
 @app.route('/make/committed', methods=['post'])
 def committed_plan():
