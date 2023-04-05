@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request, json
-from database import load_plans_from_db, SAMPLE_PLAN, add_plan_to_db
+from database import load_plans_from_db, add_plan_to_db
 from datetime import datetime
 
 app = Flask(__name__) 
@@ -7,11 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello_carem():
 #  planslist = load_plans_from_db
-  return render_template('home.html', plans=SAMPLE_PLAN)
-
-@app.route("/api/sample_plan")
-def sample_plan():
-  return jsonify(SAMPLE_PLAN)
+  return render_template('home.html')
 
 @app.route("/show")
 def show_plan():

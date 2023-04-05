@@ -23,19 +23,15 @@
           Make plan
         </h1>      
         <form action="/make/committed" method="post">
-          <div title="write your unique
-            initial (ideally min. 6 characters) - 
-            this is important to retrieve your 
-            jotted-down plans">
+          <div title="write your unique initial (4-16 characters) -this is important to retrieve your jotted-down plans">
             <label class="form-label">
               Your initial
             </label>
             <input type="text" class="form-control mb-2"
-            placeholder="Your Initial" name="mark" required>
+            placeholder="Your Initial" name="mark" required
+              minlength="4" maxlength="16">
           </div>
-          <div title="your jotted down date - 
-            this is important to retrieve your 
-            jotted-down plans">
+          <div title="your jotted down date - this is important to retrieve your jotted-down plans">
             <label class="form-lab el mb-2">
               Date
             </label>
@@ -47,21 +43,24 @@
               Today's plan
             </label>
             <input type="text" class="form-control mb-2"
-            placeholder="Today's gift" name="today" required>
+            placeholder="Today's gift" name="today" required
+              maxlength="160">
           </div>
           <div title="what did i do yesterday?">
             <label class="form-label">
               Yesterday's achievement
             </label>
             <input type="text" class="form-control mb-2"
-            placeholder="Yesterday's history" name="yesterday" required>
+            placeholder="Yesterday's history" name="yesterday"
+              required maxlength="160">
           </div>
           <div title="what`s for tomorrow?">
             <label class="form-label">
               Tomorrow's plan
             </label>
             <input type="text" class="form-control mb-2"
-            placeholder="Tomorrow's mistery" name="tomorrow" required>
+            placeholder="Tomorrow's mistery" name="tomorrow"
+              required maxlength="160">
           </div>
             
             <div class="d-grid gap-2" title="jotting down your plan">
